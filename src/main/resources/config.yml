@@ -1,1 +1,7 @@
-axe-multiplier: 1
+axe:
+  distance: 1.2
+  height: 0.65
+  includes: Winged Iron Axe
+
+bow:
+  includes: One Shot Bow
