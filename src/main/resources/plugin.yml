@@ -1,0 +1,8 @@
+name: '${project.name}'
+version: '${project.version}'
+main: gg.voided.oitq.Main
+prefix: OITQ
+load: STARTUP
+authors: [J4C0B3Y]
+description: OITQ abilities for practice
+website: https://voided.gg/
