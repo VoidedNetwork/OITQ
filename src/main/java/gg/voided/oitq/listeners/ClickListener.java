@@ -20,12 +20,12 @@ public class ClickListener implements Listener {
     public void onClick(PlayerInteractEvent event) {
         if(!event.hasItem()) return;
         if(!event.getAction().equals(Action.RIGHT_CLICK_AIR) && !event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
-        if(!event.getItem().getItemMeta().getDisplayName().contains("Winged Iron Axe")) return;
+        if(!event.getItem().getItemMeta().getDisplayName().contains(config.getString("axe.includes"))) return;
 
         Player player = event.getPlayer();
 
         if(!player.isOnGround()) return;
 
-        player.setVelocity(player.getEyeLocation().getDirection().multiply(config.getDouble("axe-multiplier")).setY(2));
+        player.setVelocity(player.getEyeLocation().getDirection().clone().multiply(config.getDouble("axe.distance")).setY(config.getDouble("axe.height")));
     }
 }

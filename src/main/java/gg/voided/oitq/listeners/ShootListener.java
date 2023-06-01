@@ -18,7 +18,7 @@ public class ShootListener implements Listener {
     @EventHandler
     public void onShoot(EntityShootBowEvent event) {
         if(!event.getEntityType().equals(EntityType.PLAYER)) return;
-        if(!event.getBow().getItemMeta().getDisplayName().contains("One Shot Bow")) return;
+        if(!event.getBow().getItemMeta().getDisplayName().contains(plugin.getConfig().getString("bow.includes"))) return;
 
         event.getProjectile().setMetadata("oitq", new FixedMetadataValue(plugin, true));
     }
