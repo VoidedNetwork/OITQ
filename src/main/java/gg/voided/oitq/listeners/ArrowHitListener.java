@@ -25,7 +25,7 @@ public class ArrowHitListener implements Listener {
         Player player = (Player) event.getEntity();
         Player shooter = (Player) arrow.getShooter();
 
-        player.damage(10000);
+        player.damage(Integer.MAX_VALUE);
 
         shooter.getInventory().setItem(8, new ItemStack(Material.ARROW));
     }
