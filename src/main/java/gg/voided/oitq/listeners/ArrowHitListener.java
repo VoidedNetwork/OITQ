@@ -2,7 +2,6 @@ package gg.voided.oitq.listeners;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,7 +23,7 @@ public class ArrowHitListener implements Listener {
         Player player = (Player) event.getEntity();
         Player shooter = (Player) arrow.getShooter();
 
-        player.setHealth(0);
+        player.damage(10000);
 
         shooter.getInventory().setItem(8, new ItemStack(Material.ARROW));
     }
