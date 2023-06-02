@@ -4,14 +4,16 @@ import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class ArrowHitListener implements Listener {
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onArrowHit(EntityDamageByEntityEvent event) {
+        if(event.isCancelled()) return;
         if(!(event.getDamager() instanceof Arrow)) return;
         if(!(event.getEntity() instanceof Player)) return;
 
